@@ -1,10 +1,12 @@
-#!/bin/sh
+#!/bin/bash
 # Adapted from https://github.com/shubham1172/setup
 # This script backs up config files regularly
 
 cd ${HOME}/setup
 
 BACKUP=${HOME}/setup/backup
+
+set -e
 
 timestamp() {
   date +"%d-%m-%Y at %T"
