@@ -1,5 +1,5 @@
 # Setup
-Personal configuration and documentation for some applications.
+Personal configuration and documentation for some applications. Adapted from https://github.com/shubham1172/setup
 
 ```
 $ mkdir ~/setup && cd ~/setup
