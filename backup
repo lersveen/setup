@@ -1,0 +1,15 @@
+# bash
+~/.bashrc ~/setup/bash/.bashrc
+~/.bash_profile ~/setup/bash/.bash_profile
+ 
+# git
+~/.gitconfig ~/setup/git/.gitconfig
+
+# ssh
+~/.ssh/config ~/setup/ssh/config
+
+# k8s
+~/.kube/config ~/setup/k8s/config
+
+# scripts
+~/.ssh/update_nrk_config.sh ~/setup/scripts/update_nrk_config.sh

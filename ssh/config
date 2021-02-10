@@ -1,0 +1,29 @@
+Host *
+  AddKeysToAgent yes
+  UseKeychain yes
+  IdentityFile ~/.ssh/id_rsa
+ControlMaster auto
+ControlPath ~/.ssh/ssh-control-%h
+ForwardX11Trusted no
+ForwardAgent no
+ServerAliveInterval 60
+StrictHostKeyChecking yes
+ 
+Include ~/.ssh/conf.d/*.conf
+ 
+
+Host *
+Match originalhost *jump0*
+DynamicForward 2222
+ 
+Host *
+Match user tmp06715 !originalhost *jump0*
+ProxyCommand socat STDIO SOCKS4:localhost:%h:%p,socksport=2222
+ 
+Host *
+Match user tmp06715@nrk.no !originalhost *jump0*
+ProxyCommand socat STDIO SOCKS4:localhost:%h:%p,socksport=2222
+ 
+Host *
+Match user dmz06715 !originalhost *jump0*
+ProxyCommand socat STDIO SOCKS4:localhost:%h:%p,socksport=2222
