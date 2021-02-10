@@ -2,5 +2,5 @@ PATH='/usr/local/bin/:/usr/bin:/bin'
 MAILTO='andre.lersveen@nrk.no'
 
 00 8-17 * * * 	out=$(~/.ssh/update_nrk_config.sh) || terminal-notifier -title "Update NRK config" -message "$out" > /dev/null
-30 */3 * * *	out=$~/setup/backup.sh) || terminal-notifier -title "Config backup" -message "$out" > /dev/null
+30 */3 * * *	out=$(~/setup/backup.sh) || terminal-notifier -title "Config backup" -message "$out" > /dev/null
 
