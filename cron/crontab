@@ -1,4 +1,4 @@
 PATH='/usr/local/bin/:/usr/bin:/bin'
 MAILTO='andre.lersveen@nrk.no'
 
-00 8-17 * * * ~/.ssh/update_nrk_config.sh
+00 8-17 * * * out=$(~/.ssh/update_nrk_config.sh) || terminal-notifier -title "Update NRK config" -message "$out" > /dev/null
