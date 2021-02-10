@@ -16,13 +16,13 @@ is_stale() {
 }
 
 # Exit if nrk.conf has been updated last 10 minutes
-if ! is_stale ~/.ssh/conf.d/nrk.conf 10; then
+if ! is_stale ~/.ssh/conf.d/nrk.conf 0; then
     echo '~/.ssh/conf.d/nrk.conf is already updated within last 10 minutes'
     exit 0
 fi
 
 # Check if we're connected to NRK felles
-if curl -fsSo /dev/null https://portalenvpntest.felles.ds.nrk.no/ >/dev/null 2>&1; then
+if curl -fsSo /dev/null https://www.nrk.no/ >/dev/null 2>&1; then
     # Try to get updated SSH config
     if curl -fsSo ~/.ssh/conf.d/nrk.conf.tmp http://sshcfg.linuxadmin.svc.int.nrk.cloud/?userid=$USERID >/dev/null 2>&1; then
         mv ~/.ssh/conf.d/nrk.conf.tmp ~/.ssh/conf.d/nrk.conf
