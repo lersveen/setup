@@ -26,8 +26,15 @@ brew list > ~/setup/brew/brewlist.txt
 # Export list of VS Code extensions
 code --list-extensions > ~/setup/vscode/vscode-extensions.txt
 
+# Export list of git repos
+for d in $(find ~ -path ~/Library -prune -o -path ~/.gnupg -prune -o -path ~/.Trash -prune -o -name '.git' -print 2> /dev/null)
+do 
+	cd $d/..
+	echo $(pwd | sed "s|${HOME}|~|") $(git config --get remote.origin.url)
+done > ~/setup/git/git-repos.txt
+
 # Get the stuff to Github
-if [[ `git status --porcelain` ]]; then
+if [[ $(git status --porcelain) ]]; then
 	git pull -q origin main
 	git add .
 	git commit -q -m "automatic update: $(timestamp)"
