@@ -18,6 +18,7 @@ git_repos() {
 		cd $d/..
 		echo $(pwd | sed "s|${HOME}|~|") $(git config --get remote.origin.url)
 	done
+	cd ${HOME}/setup
 }
 
 # Use rsync to copy all files listed in backup file
@@ -35,7 +36,7 @@ brew list > ~/setup/brew/brewlist.txt
 code --list-extensions > ~/setup/vscode/vscode-extensions.txt
 
 # Export list of git repos
-
+git_repos > git-repos-list.txt
 
 # Get the stuff to Github
 if [[ $(git status --porcelain) ]]; then
