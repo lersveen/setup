@@ -6,3 +6,5 @@
 [user]
 	name = lersveen
 	email = lersveen@gmail.com
+[init]
+	defaultBranch = main
