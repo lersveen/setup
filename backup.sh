@@ -20,6 +20,9 @@ done
 # Export crontab
 crontab -l > ~/setup/cron/crontab
 
+# Export brew list
+crontab -l > ~/setup/cron/crontab
+
 # Get the stuff to Github
 if [[ `git status --porcelain` ]]; then
 	git pull origin main
