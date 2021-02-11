@@ -96,6 +96,7 @@ wget
 xz
 yarn
 zstd
+docker
 font-fira-code
 font-fira-mono
 font-terminus
