@@ -99,3 +99,4 @@ zstd
 font-fira-code
 font-fira-mono
 font-terminus
+google-cloud-sdk
