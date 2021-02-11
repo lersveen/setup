@@ -15,12 +15,9 @@ $ xargs brew install < ~/setup/brew/brewlist.txt
 ## 3. Automatic updates
 1.  Install [Homebrew-autoupdate](https://github.com/DomT4/homebrew-autoupdate)
 ```
-brew tap domt4/autoupdate
+$ brew tap domt4/autoupdate
+```
+2. Enable automatic updates once a day
 ```
 $ brew autoupdate --start 86400 --upgrade --cleanup --enable-notification
-```
-
-## 2. Install extensions
-```
-$ cat ~/setup/vscode/vscode-extensions.txt | xargs -L 1 code --install-extension
 ```
