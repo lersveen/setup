@@ -37,7 +37,7 @@ brew list > $SETUPDIR/brew/brewlist.txt
 code --list-extensions > $SETUPDIR/vscode/vscode-extensions.txt
 
 # Export list of git repos
-git_repos > $SETUPDIR/git/git-repos-list.txt
+git_repos > $SETUPDIR/git/repolist.txt
 
 # Get the stuff to Github
 if [[ $(git status --porcelain) ]]; then
