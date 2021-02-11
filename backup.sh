@@ -2,9 +2,10 @@
 # Adapted from https://github.com/shubham1172/setup
 # This script backs up config files regularly
 
-cd ${HOME}/setup
+SETUPDIR=~/setup
+BACKUP=$SETUPDIR/backup
 
-BACKUP=${HOME}/setup/backup
+cd $SETUPDIR
 
 set -e
 
@@ -18,7 +19,7 @@ git_repos() {
 		cd $d/..
 		echo $(pwd | sed "s|${HOME}|~|") $(git config --get remote.origin.url)
 	done
-	cd ${HOME}/setup
+	cd $SETUPDIR
 }
 
 # Use rsync to copy all files listed in backup file
@@ -27,16 +28,16 @@ grep -v '^$\|^\s*\#' $BACKUP | awk NF | while read -r line; do
 done
 
 # Export crontab
-crontab -l > ~/setup/cron/crontab
+crontab -l > $SETUPDIR/cron/crontab
 
 # Export brew list of installed packages
-brew list > ~/setup/brew/brewlist.txt
+brew list > $SETUPDIR/brew/brewlist.txt
 
 # Export list of VS Code extensions
-code --list-extensions > ~/setup/vscode/vscode-extensions.txt
+code --list-extensions > $SETUPDIR/vscode/vscode-extensions.txt
 
 # Export list of git repos
-git_repos > git-repos-list.txt
+git_repos > $SETUPDIR/git/git-repos-list.txt
 
 # Get the stuff to Github
 if [[ $(git status --porcelain) ]]; then
