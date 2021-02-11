@@ -20,13 +20,16 @@ done
 # Export crontab
 crontab -l > ~/setup/cron/crontab
 
-# Export brew list
-crontab -l > ~/setup/cron/crontab
+# Export brew list of installed packages
+brew list > ~/setup/brew/brewlist.txt
+
+# Export list of VS Code extensions
+code --list-extensions > ~/setup/vscode/vscode-extensions.txt
 
 # Get the stuff to Github
 if [[ `git status --porcelain` ]]; then
-	git pull origin main
+	git pull -q origin main
 	git add .
-	git commit -m "automatic update: $(timestamp)"
-	git push origin main
+	git commit -q -m "automatic update: $(timestamp)"
+	git push -q origin main
 fi

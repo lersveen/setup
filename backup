@@ -11,5 +11,8 @@
 # k8s
 ~/.kube/config ~/setup/k8s/config
 
+# vscode
+~/Library/ApplicationSupport/Code/User/settings.json ~/setup/vscode
+
 # scripts
 ~/.ssh/update_nrk_config.sh ~/setup/scripts/update_nrk_config.sh

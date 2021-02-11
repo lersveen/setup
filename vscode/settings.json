@@ -1,0 +1,23 @@
+{
+    "window.zoomLevel": 0,
+    "python.linting.flake8CategorySeverity.E": "Warning",
+    "python.linting.flake8CategorySeverity.F": "Warning",
+    "python.venvPath": "/usr/local/bin/virtualenv",
+    "python.pythonPath": "/usr/local/bin/python3",
+    "python.pipenvPath": "/usr/local/bin/pipenv",
+    "editor.minimap.enabled": false,
+    "files.autoSave": "afterDelay",
+    "workbench.statusBar.visible": true,
+    "python.linting.flake8Enabled": true,
+    "editor.renderWhitespace": "none",
+    "python.linting.flake8Args": [
+        "--max-line-length=119"
+    ],
+    "workbench.editor.showTabs": true,
+    "[python]": {
+    
+    
+    },
+    "telemetry.enableTelemetry": false,
+    "workbench.editorAssociations": [],
+}
