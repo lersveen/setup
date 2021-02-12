@@ -46,6 +46,7 @@ if [[ $(git status --porcelain) ]]; then
 	git add .
 	git commit -q -m "automatic update: $(timestamp)"
 	git push -q origin main
+	echo 'Backup succeeded'
 else
-	echo 'Nothing to update'
+	echo 'Nothing to backup'
 fi
