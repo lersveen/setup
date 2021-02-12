@@ -1,3 +1,2 @@
 #!/bin/bash
-exec 1> >(tee >(logger))
-exec ~/setup/backup.sh || terminal-notifier -title "Config backup" -message "$out"
+out=$(~/setup/backup.sh 2>&1 1> >(tee >(logger))) || terminal-notifier -title "Config backup" -message "$out"
