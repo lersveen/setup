@@ -19,26 +19,22 @@ rsync_files() {
 		echo "$line" | awk '{ system("rsync " $1 " " $2) }'
 	done
 }
-if [[ $(rsync_files) ]]; then
-	echo "Copied files listed in $BACKUP"
-fi
+rsync_files && \
+echo "Copied files listed in $BACKUP"
 
 # Export crontab
-if [[ $(crontab -l > $SETUPDIR/cron/crontab) ]]; then
-	echo "Exported crontab"
-fi
+crontab -l > $SETUPDIR/cron/crontab && \
+echo "Exported crontab"
 
 # Export brew list of installed packages
-if [[ $(brew list > $SETUPDIR/brew/brewlist.txt) ]]; then
-	echo "Exported brew list"
-fi
+brew list > $SETUPDIR/brew/brewlist.txt && \
+echo "Exported brew list"
 
 # Export list of VS Code extensions
-if [[ $(code --list-extensions > $SETUPDIR/vscode/vscode-extensions.txt) ]]; then
-	echo "Exported vscode-extensions list"
-fi
+code --list-extensions > $SETUPDIR/vscode/vscode-extensions.txt && \
+echo "Exported vscode-extensions list"
 
-# Search and list all git repositories cloned into home folder
+# Search and export list of all git repositories cloned into home folder
 git_repos() {
 	for d in $(find ~ -path ~/Library -prune -o -path ~/.gnupg -prune -o -path ~/.Trash -prune -o -name '.git' -print 2> /dev/null)
 	do 
@@ -47,11 +43,8 @@ git_repos() {
 	done
 	cd $SETUPDIR
 }
-
-# Export list of git repos
-if [[ $(git_repos > $SETUPDIR/git/repolist.txt) ]]; then
-	echo "Exported vscode-extensions list"
-fi
+git_repos > $SETUPDIR/git/repolist.txt && \
+echo "Exported vscode-extensions list"
 
 # Get the stuff to Github
 if [[ $(git status --porcelain) ]]; then
