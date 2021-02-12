@@ -35,10 +35,13 @@ Next, you need a shell script – [backup.sh](backup.sh). It does several things
 - If any files in `~/setup` has changed, it is committed and pushed to the git repository.
 
 ## Backup your configs
+### Mac
+1. crontab
 Run this as a cronjob:
 ```sh
-$ /bin/bash -c 'out=$(~/setup/backup.sh 2>&1 1> >(tee >(logger))) || terminal-notifier -title "Config backup" -message "$out"' > /dev/null
+$ /bin/bash -c 'out=$(~/setup/backup.sh 2>&1 &> >(tee >(logger))) || terminal-notifier -title "Config backup" -message "$out"' > /dev/null
 ```
+This will log both `stdout` and `stderr` with `logger`, and on error send a notification with (terminal-notifier)[https://github.com/julienXX/terminal-notifier]. 
 
 ## Restore
 Coming soon!
