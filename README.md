@@ -1,5 +1,7 @@
 # Setup
-Personal configuration and documentation for some applications. Adapted from https://github.com/shubham1172/setup
+Personal backup tool for local configuration, with documentation for some applications. Adapted from https://github.com/shubham1172/setup.
+
+Copy as you please, but make sure you adapt to your own setup.
 
 ## Installation
 ```
