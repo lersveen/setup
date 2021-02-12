@@ -1,4 +1,5 @@
 bencoleman.armview
+DotJoshJohnson.xml
 hashicorp.terraform
 johob.pico8-vscode
 ms-azure-devops.azure-pipelines
