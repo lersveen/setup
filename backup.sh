@@ -14,18 +14,29 @@ timestamp() {
 }
 
 # Use rsync to copy all files listed in backup file
-grep -v '^$\|^\s*\#' $BACKUP | awk NF | while read -r line; do
-	echo "$line" | awk '{ system("rsync " $1 " " $2) }'
-done
+rsync_files() {
+	grep -v '^$\|^\s*\#' $BACKUP | awk NF | while read -r line; do
+		echo "$line" | awk '{ system("rsync " $1 " " $2) }'
+	done
+}
+if [[ $(rsync_files) ]]; then
+	echo "Copied files listed in $BACKUP"
+fi
 
 # Export crontab
-crontab -l > $SETUPDIR/cron/crontab
+if [[ $(crontab -l > $SETUPDIR/cron/crontab) ]]; then
+	echo "Exported crontab"
+fi
 
 # Export brew list of installed packages
-brew list > $SETUPDIR/brew/brewlist.txt
+if [[ $(brew list > $SETUPDIR/brew/brewlist.txt) ]]; then
+	echo "Exported brew list"
+fi
 
 # Export list of VS Code extensions
-code --list-extensions > $SETUPDIR/vscode/vscode-extensions.txt
+if [[ $(code --list-extensions > $SETUPDIR/vscode/vscode-extensions.txt) ]]; then
+	echo "Exported vscode-extensions list"
+fi
 
 # Search and list all git repositories cloned into home folder
 git_repos() {
@@ -38,7 +49,9 @@ git_repos() {
 }
 
 # Export list of git repos
-git_repos > $SETUPDIR/git/repolist.txt
+if [[ $(git_repos > $SETUPDIR/git/repolist.txt) ]]; then
+	echo "Exported vscode-extensions list"
+fi
 
 # Get the stuff to Github
 if [[ $(git status --porcelain) ]]; then
