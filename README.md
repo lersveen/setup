@@ -35,9 +35,9 @@ Next, you need a shell script – [backup.sh](backup.sh). It does several things
 - If any files in `~/setup` has changed, it is committed and pushed to the git repository.
 
 ## Backup your configs
-Run this manually or as a cronjob:
+Run this as a cronjob:
 ```sh
-$ ~/setup/backup.sh
+$ /bin/bash -c 'out=$(~/setup/backup.sh 2>&1 1> >(tee >(logger))) || terminal-notifier -title "Config backup" -message "$out"' > /dev/null
 ```
 
 ## Restore
