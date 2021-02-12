@@ -9,6 +9,8 @@ cd $SETUPDIR
 
 set -e
 
+echo 'lol'
+
 timestamp() {
   date +"%d-%m-%Y at %T"
 }
