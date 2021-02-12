@@ -9,6 +9,8 @@ cd $SETUPDIR
 
 set -e
 
+curl -fsSo /dev/null google.com
+
 timestamp() {
   date +"%d-%m-%Y at %T"
 }
