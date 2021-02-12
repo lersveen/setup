@@ -19,20 +19,16 @@ rsync_files() {
 		echo "$line" | awk '{ system("rsync " $1 " " $2) }'
 	done
 }
-rsync_files && \
-echo "Copied files listed in $BACKUP"
+rsync_files
 
 # Export crontab
-crontab -l > $SETUPDIR/cron/crontab && \
-echo "Exported crontab"
+crontab -l > $SETUPDIR/cron/crontab
 
 # Export brew list of installed packages
-brew list > $SETUPDIR/brew/brewlist.txt && \
-echo "Exported brew list"
+brew list > $SETUPDIR/brew/brewlist.txt
 
 # Export list of VS Code extensions
-code --list-extensions > $SETUPDIR/vscode/vscode-extensions.txt && \
-echo "Exported vscode-extensions list"
+code --list-extensions > $SETUPDIR/vscode/vscode-extensions.txt
 
 # Search and export list of all git repositories cloned into home folder
 git_repos() {
@@ -43,8 +39,7 @@ git_repos() {
 	done
 	cd $SETUPDIR
 }
-git_repos > $SETUPDIR/git/repolist.txt && \
-echo "Exported git repo list"
+git_repos > $SETUPDIR/git/repolist.txt
 
 # Get the stuff to Github
 if [[ $(git status --porcelain) ]]; then
