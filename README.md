@@ -36,12 +36,20 @@ Next, you need a shell script – [backup.sh](backup.sh). It does several things
 
 ## Backup your configs
 ### Mac
-1. crontab
-Run this as a cronjob:
+1. Open user crontab for editing:
 ```sh
-$ /bin/bash -c 'out=$(~/setup/backup.sh 2>&1 &> >(tee >(logger))) || terminal-notifier -title "Config backup" -message "$out"' > /dev/null
+$ crontab -e
+```
+
+2. Add this line:
+```
+00 * * * *  /bin/bash -c 'out=$(~/setup/backup.sh 2>&1 &> >(tee >(logger))) || terminal-notifier -title "Config backup" -message "$out"' > /dev/null
 ```
 This will log both `stdout` and `stderr` with `logger`, and on error send a notification with (terminal-notifier)[https://github.com/julienXX/terminal-notifier]. 
+
+### Linux (not tested)
+Same as above, but add this line instead – swapping `terminal-notifier` for `notify-send`:
+00 * * * *  /bin/bash -c 'out=$(~/setup/backup.sh 2>&1 &> >(tee >(logger))) || notify-send "Config backup" "$out"' > /dev/null
 
 ## Restore
 Coming soon!
