@@ -13,6 +13,7 @@ timestamp() {
   date +"%d-%m-%Y at %T"
 }
 
+# Search and list all git repositories cloned into home folder
 git_repos() {
 	for d in $(find ~ -path ~/Library -prune -o -path ~/.gnupg -prune -o -path ~/.Trash -prune -o -name '.git' -print 2> /dev/null)
 	do 
