@@ -44,7 +44,7 @@ git_repos() {
 	cd $SETUPDIR
 }
 git_repos > $SETUPDIR/git/repolist.txt && \
-echo "Exported vscode-extensions list"
+echo "Exported git repo list"
 
 # Get the stuff to Github
 if [[ $(git status --porcelain) ]]; then
@@ -52,7 +52,7 @@ if [[ $(git status --porcelain) ]]; then
 	git add .
 	git commit -q -m "automatic update: $(timestamp)"
 	git push -q origin main
-	echo 'Backup succeeded'
+	echo 'Backup to Github succeeded'
 else
 	echo 'Nothing to backup'
 fi
