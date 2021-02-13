@@ -20,11 +20,7 @@
     <array>
       <string>/bin/bash</string>
       <string>-c</string>
-      <string>out=$(~/setup/backup.sh 2>&1) || terminal-notifier -title "Config backup" -message "$out"</string>
+      <string>'out=$(~/setup/backup.sh 2>&1 &> >(tee >(logger))) || terminal-notifier -title "Config backup" -message "$out"'</string>
     </array>
-    <key>StandardOutPath</key>
-    <string>/usr/local/var/com.github.lersveen.backup/output.log</string>
-    <key>StandardErrorPath</key>
-    <string>/usr/local/var/com.github.lersveen.backup/error.log</string>
   </dict>
 </plist>

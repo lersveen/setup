@@ -1,7 +1,9 @@
 # Setup
-Personal backup tool for local configuration, with documentation for some applications. Adapted from [github.com/shubham1172/setup](https://github.com/shubham1172/setup).
+Personal backup tool for local configuration, with documentation for some applications. 
 
-Copy as you please, but make sure you adapt to your own setup.
+- Adapted from [github.com/shubham1172/setup](https://github.com/shubham1172/setup)
+- Be aware that my version has parts that are MacOS specific
+- Copy as you please, but make sure you adapt to your own setup
 
 ## Prerequisites
 If you're not me, make your own blank Github repository called `setup` first.
@@ -35,25 +37,28 @@ Next, you need a shell script – [backup.sh](backup.sh). It does several things
 - If any files in `~/setup` has changed, it is committed and pushed to the git repository.
 
 ## Backup your configs
-### Mac
+
+### As cronjob
 1. Open user crontab for editing:
-```sh
-$ crontab -e
-```
+    ```sh
+    $ crontab -e
+    ```
 
 2. Add this line:
-```
-00 * * * *  /bin/bash -c 'out=$(~/setup/backup.sh 2>&1 &> >(tee >(logger))) || terminal-notifier -title "Config backup" -message "$out"' > /dev/null
-```
-This will log both `stdout` and `stderr` with `logger`, and on error send a notification with (terminal-notifier)[https://github.com/julienXX/terminal-notifier]. 
+    ```
+    00 * * * *  /bin/bash -c 'out=$(~/setup/backup.sh 2>&1 &> >(tee >(logger))) || terminal-notifier -title "Config backup" -message "$out"' > /dev/null
+    ```
 
-Logs can be read using:
-```sh
-$ log show --style compact --info --debug --predicate 'process == "logger"' --last 24h
-```
+### Logging and error handling
+- Both `stdout` and `stderr` will be logged to the system log with `logger`
+- On error a notification is sent with [terminal-notifier](https://github.com/julienXX/terminal-notifier) (needs to be installed)
+- Logs can be read using:
+    ```sh
+    $ log show --style compact --info --debug --predicate 'process == "logger"' --last 24h
+    ```
 
 ### Linux (not tested)
-Same as above, but add this line instead – swapping `terminal-notifier` for `notify-send`:
+Should be same as Mac cronjob example, but add this line instead – swapping `terminal-notifier` for `notify-send`:
 00 * * * *  /bin/bash -c 'out=$(~/setup/backup.sh 2>&1 &> >(tee >(logger))) || notify-send "Config backup" "$out"' > /dev/null
 
 ## Restore

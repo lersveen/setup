@@ -41,8 +41,14 @@ git_repos() {
 }
 git_repos > $SETUPDIR/git/repolist.txt
 
-# Get the stuff to Github
+# Check if there are any changes to push
 if [[ $(git status --porcelain) ]]; then
+	# Check if we can reach Github.com
+	if ! nc -dzw1 github.com 443 &>/dev/null; then
+		echo 'There are changes, but cannot connect to github.com, so stopping early'
+		exit 0
+	fi
+
 	git pull -q origin main
 	git add .
 	git commit -q -m "automatic update: $(timestamp)"
