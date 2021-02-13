@@ -47,6 +47,11 @@ $ crontab -e
 ```
 This will log both `stdout` and `stderr` with `logger`, and on error send a notification with (terminal-notifier)[https://github.com/julienXX/terminal-notifier]. 
 
+Logs can be read using:
+```sh
+$ log show --style compact --info --debug --predicate 'process == "logger"' --last 24h
+```
+
 ### Linux (not tested)
 Same as above, but add this line instead – swapping `terminal-notifier` for `notify-send`:
 00 * * * *  /bin/bash -c 'out=$(~/setup/backup.sh 2>&1 &> >(tee >(logger))) || notify-send "Config backup" "$out"' > /dev/null
