@@ -1,7 +1,5 @@
 PATH='/usr/local/bin/:/usr/bin:/bin'
 MAILTO='andre.lersveen@nrk.no'
-GMAIL_USER='lersveen@gmail.com'
-GMAIL_PASSWORD='oqywtcfonjejfydm'
 
 00 * * * * 	/bin/bash -c 'out=$(~/.ssh/update_nrk_config.sh 2>&1 &> >(tee >(logger))) || terminal-notifier -title "Update NRK config" -message "$out"' > /dev/null
 30 * * * *	/bin/bash -c 'out=$(~/setup/backup.sh 2>&1 &> >(tee >(logger))) || terminal-notifier -title "Config backup" -message "$out"' > /dev/null
