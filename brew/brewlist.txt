@@ -62,6 +62,7 @@ libunistring
 libusb
 libzip
 mpfr
+mysql-client
 ncurses
 nettle
 nghttp2

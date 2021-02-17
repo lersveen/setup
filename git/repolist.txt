@@ -10,8 +10,10 @@
 ~/github/monitoring-programsjekk-fetchers https://github.com/nrkno/monitoring-programsjekk-fetchers.git
 ~/github/nrk-webhook-proxy https://github.com/nrkno/nrk-webhook-proxy.git
 ~/github/monitoring-changebot https://github.com/nrkno/monitoring-changebot.git
+~/github/mjaupi https://github.com/lersveen/mjaupi.git
 ~/github/publisering-pubo https://github.com/nrkno/publisering-pubo.git
 ~/github/monitoring-errbot https://github.com/nrkno/monitoring-errbot.git
+~/github/ikea-checker git@github.com:lersveen/ikea-checker.git
 ~/github/plattform-config/.terraform/modules/akamai_siteshield ssh://git@github.com/nrkno/plattform-terraform.git
 ~/github/plattform-config/.terraform/modules/gke_plattform_ne ssh://git@github.com/nrkno/nrk-cloud-kubernetes-config.git
 ~/github/plattform-config/.terraform/modules/aks-platform-ne-common ssh://git@github.com/nrkno/plattform-config.git
@@ -19,3 +21,4 @@
 ~/github/Furuberget https://github.com/lersveen/Furuberget.git
 ~/github/programsjekk-fastapi https://github.com/nrkno/programsjekk-fastapi.git
 ~/github/monitoring-himin https://github.com/nrkno/monitoring-himin.git
+~/scripts git@github.com:lersveen/scripts.git
