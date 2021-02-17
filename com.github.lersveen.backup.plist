@@ -20,7 +20,7 @@
     <array>
       <string>/bin/bash</string>
       <string>-c</string>
-      <string>'out=$(~/setup/backup.sh 2>&1 &> >(tee >(logger))) || terminal-notifier -title "Config backup" -message "$out"'</string>
+      <string>out=$(~/setup/backup.sh 2>&1 &> >(tee >(logger))) || terminal-notifier -title "Config backup" -message "$out"</string>
     </array>
   </dict>
 </plist>

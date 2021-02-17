@@ -3,5 +3,3 @@ MAILTO='andre.lersveen@nrk.no'
 
 00 * * * * 	/bin/bash -c 'out=$(~/.ssh/update_nrk_config.sh 2>&1 &> >(tee >(logger))) || terminal-notifier -title "Update NRK config" -message "$out"' > /dev/null
 30 * * * *	/bin/bash -c 'out=$(~/setup/backup.sh 2>&1 &> >(tee >(logger))) || terminal-notifier -title "Config backup" -message "$out"' > /dev/null
-
-15 * * * *	/bin/bash -c 'out=$(~/github/ikea-checker/run lersveen@gmail.com 2>&1 &> >(tee >(logger))) || terminal-notifier -title "Ikea checker" -message "$out"' > /dev/null
