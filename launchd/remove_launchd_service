@@ -16,7 +16,7 @@ if [[ $(launchctl list | grep $SERVICE) ]]; then
 fi
 
 # Remove plist
-if [[ $(cat ~/Library/LaunchAgents/$FILE &> /dev/null) ]]; then
+if [[ $(cat ~/Library/LaunchAgents/$FILE 2> /dev/null) ]]; then
     rm -f ~/Library/LaunchAgents/$FILE &> /dev/null \
     && plist_removed=true
 fi
