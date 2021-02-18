@@ -19,8 +19,8 @@ launchctl load ~/Library/LaunchAgents/$FILE
 
 # Check that service is running
 launchctl list | grep $SERVICE > /dev/null \
-&& echo 'Launchd service '$(NAME^}' installed successfully' \
-|| (echo 'Failed to install '$(NAME^)' launchd service'; exit 1)
+&& echo 'Launchd service '${NAME^}' installed successfully' \
+|| (echo 'Failed to install '${NAME^}' launchd service'; exit 1)
 
 # Keep terminal open
 echo ''
