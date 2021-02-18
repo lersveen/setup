@@ -5,6 +5,7 @@
 ~/github/monitoring-programsjekk-bingers https://github.com/nrkno/monitoring-programsjekk-bingers.git
 ~/github/prometheus-scrapeconfigs https://github.com/nrkno/prometheus-scrapeconfigs.git
 ~/github/linuxadmin-saltstack https://github.com/nrkno/linuxadmin-saltstack.git
+~/github/ssh-nrk-config-updater https://github.com/nrkno/ssh-nrk-config-updater.git
 ~/github/nrk-cloud-kubernetes-config https://github.com/nrkno/nrk-cloud-kubernetes-config.git
 ~/github/SLIppery-SQLope https://github.com/nrkno/SLIppery-SQLope.git
 ~/github/monitoring-programsjekk-fetchers https://github.com/nrkno/monitoring-programsjekk-fetchers.git

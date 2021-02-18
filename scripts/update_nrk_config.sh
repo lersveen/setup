@@ -1,8 +1,13 @@
 #!/bin/bash
 # Script to update local NRK SSH config at ~/.ssh/conf.d/nrk.conf
 
-# Replace with your NRK user ID – only numbers
-USERID='06715'
+# Get NRK user ID from first program argument – exit early if missing
+if echo $1 | grep -qE '^[0-9]{5,6}$'; then
+    USERID=$1
+else
+    echo 'You need to provide a NRK user ID (5-6 digits, only digits) as an argument'
+    exit 1
+fi
 
 file_age() {
     local filename=$1
