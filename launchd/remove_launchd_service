@@ -12,7 +12,7 @@ NAME=${SERVICE##*.} # Gets part of service name after last dot
 # Unload service
 if [[ $(launchctl list | grep $SERVICE) ]]; then
     was_loaded=true
-    launchctl unload ~/Library/LaunchAgents/$FILE
+    launchctl unload ~/Library/LaunchAgents/$FILE &> /dev/null
 fi
 
 # Remove plist
