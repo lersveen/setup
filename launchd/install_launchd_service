@@ -5,12 +5,12 @@ DIR=$(cd -P -- "$(dirname -- "$0")" && pwd -P)
 cd $DIR
 
 # Find service plist
-FILE=$(ls *.plist| head -1) # Returns first .plist file in folder
-SERVICE=${FILE%.plist} # Strips .plist
-NAME=${SERVICE##*.} # Gets part of service name after last dot
+FILE="$(ls *.plist| head -1)" # Returns first .plist file in folder
+SERVICE="${FILE%.plist}" # Strips .plist
+NAME="${SERVICE##*.}" # Gets part of service name after last dot
 
 # Unload if service already loaded
-if [[ $(launchctl list | grep $SERVICE) > /dev/null ]]; then
+if [[ $(launchctl list | grep $SERVICE) ]]; then
     echo 'Service already loaded – unloading and reloading'
     launchctl unload ~/Library/LaunchAgents/$FILE
 fi
@@ -20,7 +20,7 @@ cp $DIR/$FILE ~/Library/LaunchAgents/
 launchctl load ~/Library/LaunchAgents/$FILE
 
 # Check that service is running
-if [[ $(launchctl list | grep $SERVICE) > /dev/null ]]; then
+if [[ $(launchctl list | grep $SERVICE) ]]; then
     echo 'Launchd service '$NAME' installed successfully'
 else
     echo 'Failed to install '$NAME' launchd service'
