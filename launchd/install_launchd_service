@@ -1,5 +1,4 @@
 #!/bin/bash
-echo $PATH
 
 # Find script directory and go there
 DIR=$(cd -P -- "$(dirname -- "$0")" && pwd -P)
@@ -23,11 +22,17 @@ launchctl load ~/Library/LaunchAgents/$FILE
 # Check that service is running
 if [[ $(launchctl list | grep $SERVICE) ]]; then
     echo 'Launchd service '$NAME' installed successfully'
+    (exit 0)
 else
     echo 'Failed to install '$NAME' launchd service'
     (exit 1)
 fi
 
+# Keep exit code
+EXIT=$?
+
 # Keep terminal open
 echo ''
 read -p 'Press Enter to exit'
+
+exit $EXIT
