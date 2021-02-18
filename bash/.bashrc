@@ -12,6 +12,9 @@ alias ls='ls -GFh'
 alias programsjekk="cd ~/github/monitoring-programsjekk"
 alias himin="cd ~/github/monitoring-himin"
 
+# Set path
+export PATH="~/bin:/usr/local/sbin:$PATH"
+
 # Git branch in prompt
 parse_git_branch() {
  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
@@ -37,7 +40,6 @@ export EDITOR="code -n -w"
 # Nano as editor for crontab (etc?)
 export VISUAL="nano"
 
-export PATH="/usr/local/sbin:$PATH"
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/n06715/google-cloud-sdk/path.bash.inc' ]; then . '/Users/n06715/google-cloud-sdk/path.bash.inc'; fi
 

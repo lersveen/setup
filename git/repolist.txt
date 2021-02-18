@@ -5,7 +5,6 @@
 ~/github/monitoring-programsjekk-bingers https://github.com/nrkno/monitoring-programsjekk-bingers.git
 ~/github/prometheus-scrapeconfigs https://github.com/nrkno/prometheus-scrapeconfigs.git
 ~/github/linuxadmin-saltstack https://github.com/nrkno/linuxadmin-saltstack.git
-~/github/ssh-nrk-config-updater https://github.com/nrkno/ssh-nrk-config-updater.git
 ~/github/nrk-cloud-kubernetes-config https://github.com/nrkno/nrk-cloud-kubernetes-config.git
 ~/github/SLIppery-SQLope https://github.com/nrkno/SLIppery-SQLope.git
 ~/github/monitoring-programsjekk-fetchers https://github.com/nrkno/monitoring-programsjekk-fetchers.git
@@ -14,6 +13,7 @@
 ~/github/mjaupi https://github.com/lersveen/mjaupi.git
 ~/github/publisering-pubo https://github.com/nrkno/publisering-pubo.git
 ~/github/monitoring-errbot https://github.com/nrkno/monitoring-errbot.git
+~/github/nrk-sshconf-updater https://github.com/nrkno/nrk-sshconf-updater.git
 ~/github/ikea-checker git@github.com:lersveen/ikea-checker.git
 ~/github/plattform-config/.terraform/modules/akamai_siteshield ssh://git@github.com/nrkno/plattform-terraform.git
 ~/github/plattform-config/.terraform/modules/gke_plattform_ne ssh://git@github.com/nrkno/nrk-cloud-kubernetes-config.git
