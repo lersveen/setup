@@ -10,18 +10,30 @@ SERVICE=${FILE%.plist} # Strips .plist
 NAME=${SERVICE##*.} # Gets part of service name after last dot
 
 # Unload service
-launchctl list | grep $SERVICE > /dev/null \
-&& launchctl unload ~/Library/LaunchAgents/$FILE \
-|| echo 'Backup launchd service is not installed'
+if [[ $(launchctl list | grep $SERVICE) ]]; then
+    launchctl unload ~/Library/LaunchAgents/$FILE \
+else
+    echo 'Backup launchd service is not installed'
+    (exit 1)
+fi
 
 # Remove plist
 rm -f ~/Library/LaunchAgents/$FILE > /dev/null
 
 # Check that service is not running
-launchctl list | grep $SERVICE > /dev/null \
-&& echo 'Failed to remove '"${NAME^}"' launchd service' \
-|| echo 'Launchd service '"${NAME^}"' removed successfully'
+if [[ $(launchctl list | grep $SERVICE) ]]; then
+    echo 'Failed to remove '$NAME' launchd service' \
+    (exit 1)
+else
+    echo 'Launchd service '$NAME' removed successfully'
+    (exit 0)
+fi
+
+# Keep exit code
+EXIT=$?
 
 # Keep terminal open
 echo ''
 read -p 'Press Enter to exit'
+
+exit $EXIT
