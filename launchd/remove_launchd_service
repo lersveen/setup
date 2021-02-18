@@ -1,6 +1,8 @@
 #!/bin/bash
 
+# Find script directory and go there
 DIR=$(cd -P -- "$(dirname -- "$0")" && pwd -P)
+cd $DIR
 
 # Find service plist
 FILE=$(ls *.plist| head -1) # Returns first .plist file in folder
@@ -9,16 +11,16 @@ NAME=${SERVICE##*.} # Gets part of service name after last dot
 
 # Unload service
 launchctl list | grep $SERVICE > /dev/null \
-&& launchctl unload ~/Library/LaunchAgents/com.github.lersveen.backup.plist \
+&& launchctl unload ~/Library/LaunchAgents/$FILE \
 || echo 'Backup launchd service is not installed'
 
 # Remove plist
-rm -f ~/Library/LaunchAgents/com.github.lersveen.backup.plist > /dev/null
+rm -f ~/Library/LaunchAgents/$FILE > /dev/null
 
 # Check that service is not running
-launchctl list | grep com.github.lersveen.backup > /dev/null \
-&& echo 'Failed to remove backup launchd service' \
-|| echo 'Backup launchd service removed successfully'
+launchctl list | grep $SERVICE > /dev/null \
+&& echo 'Failed to remove "' $NAME '" launchd service' \
+|| echo 'Launchd service "' $NAME '" removed successfully'
 
 # Keep terminal open
 echo ''

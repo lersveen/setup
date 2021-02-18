@@ -1,5 +1,8 @@
 #!/bin/bash
+
+# Find script directory and go there
 DIR=$(cd -P -- "$(dirname -- "$0")" && pwd -P)
+cd $DIR
 
 # Find service plist
 FILE=$(ls *.plist| head -1) # Returns first .plist file in folder
