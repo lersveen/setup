@@ -6,8 +6,9 @@ cd $DIR
 
 # Find service plist
 FILE="$(ls *.plist| head -1)" # Returns first .plist file in folder
-SERVICE="${FILE%.plist}" # Strips .plist
-NAME="${SERVICE##*.}" # Gets part of service name after last dot
+SERVICE=${FILE%.plist} # Strips .plist
+NAME=${SERVICE##*.} # Gets part of service name after last dot
+echo ${NAME^}
 
 # Unload if service already loaded
 if [[ $(launchctl list | grep $SERVICE) ]]; then
