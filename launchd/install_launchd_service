@@ -8,7 +8,8 @@ cd $DIR
 FILE="$(ls *.plist| head -1)" # Returns first .plist file in folder
 SERVICE=${FILE%.plist} # Strips .plist
 NAME=${SERVICE##*.} # Gets part of service name after last dot
-echo ${NAME^}
+TEST='test'
+echo ${TEST^}
 
 # Unload if service already loaded
 if [[ $(launchctl list | grep $SERVICE) ]]; then
