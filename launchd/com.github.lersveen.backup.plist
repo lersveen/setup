@@ -16,6 +16,11 @@
       <key>Minute</key>
       <integer>30</integer>
     </dict>
+    <key>EnvironmentVariables</key>
+    <dict>
+           <key>PATH</key>
+           <string>/usr/local/bin/:/usr/bin:/bin</string>
+    </dict>
     <key>ProgramArguments</key>
     <array>
       <string>/bin/bash</string>
