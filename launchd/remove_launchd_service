@@ -11,21 +11,28 @@ NAME=${SERVICE##*.} # Gets part of service name after last dot
 
 # Unload service
 if [[ $(launchctl list | grep $SERVICE) ]]; then
-    launchctl unload ~/Library/LaunchAgents/$FILE \
-else
-    echo 'Backup launchd service is not installed'
-    (exit 1)
+    was_loaded=true
+    launchctl unload ~/Library/LaunchAgents/$FILE
 fi
 
 # Remove plist
-rm -f ~/Library/LaunchAgents/$FILE > /dev/null
+if [[ $(cat ~/Library/LaunchAgents/$FILE &> /dev/null) ]]; then
+    rm -f ~/Library/LaunchAgents/$FILE &> /dev/null \
+    && plist_removed=true
+fi
 
 # Check that service is not running
 if [[ $(launchctl list | grep $SERVICE) ]]; then
-    echo 'Failed to remove '$NAME' launchd service' \
+    echo 'Failed to remove '$NAME' launchd service'
     (exit 1)
 else
-    echo 'Launchd service '$NAME' removed successfully'
+    if [ "$was_loaded" = true ] && [ "$plist_removed" = true ]; then
+        echo 'Launchd service '$NAME' and plist removed successfully'
+    elif [ "$plist_removed" = true ]; then
+        echo 'Launchd service '$NAME' was not loaded, but plist file removed successfully'
+    else
+        echo 'Launchd service '$NAME' is not installed, did nothing'
+    fi
     (exit 0)
 fi
 
