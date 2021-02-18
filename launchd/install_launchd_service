@@ -12,7 +12,7 @@ NAME=${SERVICE##*.} # Gets part of service name after last dot
 # Unload if service already loaded
 if [[ $(launchctl list | grep $SERVICE) ]]; then
     echo 'Service already loaded – unloading and reloading'
-    launchctl unload ~/Library/LaunchAgents/$FILE
+    launchctl unload ~/Library/LaunchAgents/$FILE &> /dev/null
 fi
 
 # Copy plist and load launchd service
