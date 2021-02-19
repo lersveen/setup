@@ -4,6 +4,8 @@
   <dict>
     <key>Label</key>
     <string>com.github.lersveen.backup</string>
+    <key>RunAtLoad</key>
+      <false/>
     <key>KeepAlive</key>
     <dict>
       <key>SuccessfulExit</key>
@@ -21,9 +23,11 @@
            <key>PATH</key>
            <string>/usr/local/bin/:/usr/bin:/bin</string>
     </dict>
+    <key>Program</key>
+      <string>/bin/bash</string>
     <key>ProgramArguments</key>
     <array>
-      <string>/bin/bash</string>
+      <string>bash</string>
       <string>-c</string>
       <string>out=$(~/setup/backup.sh 2>&1 &> >(tee >(logger))) || terminal-notifier -title "Config backup" -message "$out"</string>
     </array>
