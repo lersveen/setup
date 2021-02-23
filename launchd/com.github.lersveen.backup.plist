@@ -14,11 +14,13 @@
       <true/>
     </dict>
     <key>ThrottleInterval</key>
-    <integer>60</integer>
+    <integer>0</integer>
     <key>StartCalendarInterval</key>
     <dict>
+      <key>Hour</key>
+	    <integer>0</integer>
       <key>Minute</key>
-      <integer>30</integer>
+      <integer>0</integer>
     </dict>
     <key>EnvironmentVariables</key>
     <dict>
