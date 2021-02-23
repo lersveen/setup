@@ -13,6 +13,3 @@
 
 # vscode
 ~/Library/ApplicationSupport/Code/User/settings.json ~/setup/vscode
-
-# scripts
-~/.ssh/update_nrk_config.sh ~/setup/scripts/update_nrk_config.sh
