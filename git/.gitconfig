@@ -5,7 +5,7 @@
 	required = true
 [user]
 	name = lersveen
-	email = lersveen@gmail.com
+	email = 7195448+lersveen@users.noreply.github.com
 	signingkey = 7195448+lersveen@users.noreply.github.com
 [init]
 	defaultBranch = main
