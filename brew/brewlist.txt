@@ -8,6 +8,7 @@ azure-cli
 bash
 bash-completion@2
 bdw-gc
+bitwarden-cli
 brotli
 c-ares
 composer
@@ -61,6 +62,7 @@ libtool
 libunistring
 libusb
 libzip
+mpdecimal
 mpfr
 mysql-client
 ncurses
@@ -76,6 +78,7 @@ pcre
 pcre2
 php
 pinentry
+pinentry-mac
 pkg-config
 postgresql
 python@3.8

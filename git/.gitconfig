@@ -6,5 +6,8 @@
 [user]
 	name = lersveen
 	email = lersveen@gmail.com
+	signingkey = 7195448+lersveen@users.noreply.github.com
 [init]
 	defaultBranch = main
+[commit]
+	gpgsign = true
