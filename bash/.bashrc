@@ -15,6 +15,11 @@ alias himin="cd ~/github/monitoring-himin"
 # Set path
 export PATH="~/bin:/usr/local/sbin:$PATH"
 
+# Tell SSH how to access the gpg-agent and make sure gpg-agent is launched and ready for use.
+export GPG_TTY=$(tty)
+export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+gpgconf --launch gpg-agent
+
 # Git branch in prompt
 parse_git_branch() {
  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
@@ -45,4 +50,3 @@ if [ -f '/Users/n06715/google-cloud-sdk/path.bash.inc' ]; then . '/Users/n06715/
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/n06715/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/n06715/google-cloud-sdk/completion.bash.inc'; fi
-

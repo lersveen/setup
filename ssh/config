@@ -1,7 +1,6 @@
 Host *
   AddKeysToAgent yes
   UseKeychain yes
-  IdentityFile ~/.ssh/id_rsa
 ControlMaster auto
 ControlPath ~/.ssh/ssh-control-%h
 ForwardX11Trusted no
