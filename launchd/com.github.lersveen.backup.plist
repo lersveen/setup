@@ -32,7 +32,7 @@
     <key>ProgramArguments</key>
     <array>
       <string>bash</string>
-      <string>-c</string>
+      <string>-lc</string>
       <string>out=$(~/setup/backup.sh 2>&1 &> >(tee >(logger))) || terminal-notifier -title "Config backup" -message "$out"</string>
     </array>
   </dict>
