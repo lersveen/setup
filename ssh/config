@@ -10,6 +10,11 @@ StrictHostKeyChecking yes
  
 Include ~/.ssh/conf.d/*.conf
  
+Host mjaupi
+Hostname 192.168.1.78
+User lersveen
+CheckHostIP no
+StrictHostKeyChecking yes
 
 Host *
 Match originalhost *jump0*
