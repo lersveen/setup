@@ -2,8 +2,6 @@
 # Adapted from https://github.com/shubham1172/setup
 # This script backs up config files regularly
 
-source ~/.bashrc
-
 SETUPDIR=~/setup
 BACKUP=$SETUPDIR/backup
 
