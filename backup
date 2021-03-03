@@ -13,3 +13,7 @@
 
 # vscode
 ~/Library/ApplicationSupport/Code/User/settings.json ~/setup/vscode
+
+# gnupg
+~/.gnupg/gpg-agent.conf ~/setup/gnupg/gpg-agent.conf
+~/.gnupg/sshcontrol ~/setup/gnupg/sshcontrol

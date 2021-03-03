@@ -3,6 +3,7 @@
 ~/github/monitoring-programsjekk https://github.com/nrkno/monitoring-programsjekk.git
 ~/github/monitoring-healthshake https://github.com/nrkno/monitoring-healthshake.git
 ~/github/monitoring-programsjekk-bingers https://github.com/nrkno/monitoring-programsjekk-bingers.git
+~/github/sonarr-show-adder https://github.com/lersveen/sonarr-show-adder.git
 ~/github/prometheus-scrapeconfigs https://github.com/nrkno/prometheus-scrapeconfigs.git
 ~/github/linuxadmin-saltstack https://github.com/nrkno/linuxadmin-saltstack.git
 ~/github/nrk-cloud-kubernetes-config https://github.com/nrkno/nrk-cloud-kubernetes-config.git
