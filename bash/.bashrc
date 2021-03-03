@@ -9,8 +9,9 @@ export LSCOLORS=ExFxBxDxCxegedabagacad
 
 # Add some extra functionality to ls by default
 alias ls='ls -GFh'
-alias programsjekk="cd ~/github/monitoring-programsjekk"
-alias himin="cd ~/github/monitoring-himin"
+
+# Shortcut to start ssh tunnel
+alias ssh-tunnel='ssh -N -v jump01'
 
 # Set path
 export PATH="~/bin:/usr/local/sbin:$PATH"
@@ -36,17 +37,14 @@ fi
 
 [[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
 
-# Shortcut to start ssh tunnel
-alias ssh-tunnel='ssh -N -v jump01'
-
 # VSCode as default editor
 export EDITOR="code -n -w"
 
 # Nano as editor for crontab (etc?)
 export VISUAL="nano"
 
-# The next line updates PATH for the Google Cloud SDK.
+# Update PATH for the Google Cloud SDK
 if [ -f '/Users/n06715/google-cloud-sdk/path.bash.inc' ]; then . '/Users/n06715/google-cloud-sdk/path.bash.inc'; fi
 
-# The next line enables shell command completion for gcloud.
+# Enable shell command completion for gcloud
 if [ -f '/Users/n06715/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/n06715/google-cloud-sdk/completion.bash.inc'; fi
