@@ -11,6 +11,7 @@ bdw-gc
 bitwarden-cli
 brotli
 c-ares
+cocoapods
 composer
 curl
 curl-openssl
@@ -101,7 +102,9 @@ wget
 xz
 yarn
 zstd
+android-studio
 docker
+flutter
 font-fira-code
 font-fira-mono
 font-terminus

@@ -1,4 +1,6 @@
 bencoleman.armview
+Dart-Code.dart-code
+Dart-Code.flutter
 DotJoshJohnson.xml
 hashicorp.terraform
 johob.pico8-vscode
