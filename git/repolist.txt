@@ -5,6 +5,7 @@
 ~/github/monitoring-programsjekk-bingers https://github.com/nrkno/monitoring-programsjekk-bingers.git
 ~/github/sonarr-show-adder https://github.com/lersveen/sonarr-show-adder.git
 ~/github/prometheus-scrapeconfigs https://github.com/nrkno/prometheus-scrapeconfigs.git
+~/github/silly-name-api https://github.com/lersveen/silly-name-api.git
 ~/github/linuxadmin-saltstack https://github.com/nrkno/linuxadmin-saltstack.git
 ~/github/nrk-cloud-kubernetes-config https://github.com/nrkno/nrk-cloud-kubernetes-config.git
 ~/github/SLIppery-SQLope https://github.com/nrkno/SLIppery-SQLope.git

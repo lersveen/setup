@@ -19,7 +19,12 @@
     
     },
     "telemetry.enableTelemetry": false,
-    "workbench.editorAssociations": [],
+    "workbench.editorAssociations": [
+        {
+            "viewType": "jupyter.notebook.ipynb",
+            "filenamePattern": "*.ipynb"
+        }
+    ],
     "[dart]": {
         "editor.formatOnSave": true,
         "editor.formatOnType": true,
