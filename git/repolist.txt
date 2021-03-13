@@ -24,5 +24,6 @@
 ~/github/Furuberget https://github.com/lersveen/Furuberget.git
 ~/github/furubase https://github.com/lersveen/furubase.git
 ~/github/programsjekk-fastapi https://github.com/nrkno/programsjekk-fastapi.git
+~/github/andre.party https://github.com/lersveen/andre.party.git
 ~/github/monitoring-himin https://github.com/nrkno/monitoring-himin.git
 ~/scripts git@github.com:lersveen/scripts.git

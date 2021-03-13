@@ -62,6 +62,7 @@ libtiff
 libtool
 libunistring
 libusb
+libyaml
 libzip
 mpdecimal
 mpfr
@@ -86,6 +87,7 @@ python@3.8
 python@3.9
 readline
 rtmpdump
+ruby
 siege
 socat
 sqlite

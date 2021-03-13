@@ -13,8 +13,11 @@ alias ls='ls -GFh'
 # Shortcut to start ssh tunnel
 alias ssh-tunnel='ssh -N -v jump01'
 
-# Set path
+# Add ~/bin and /usr/local/sbin to path
 export PATH="~/bin:/usr/local/sbin:$PATH"
+
+# Add ruby and ruby gems to path
+export PATH="$HOME/.local/share/gem/ruby/3.0.0/bin:/usr/local/opt/ruby/bin:$PATH"
 
 # Tell SSH how to access the gpg-agent and make sure gpg-agent is launched and ready for use.
 export GPG_TTY=$(tty)
