@@ -64,6 +64,7 @@ libunistring
 libusb
 libyaml
 libzip
+m4
 mpdecimal
 mpfr
 mysql-client
